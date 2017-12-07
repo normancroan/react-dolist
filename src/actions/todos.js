@@ -19,3 +19,11 @@ export const toggleTodo = ({ id } = {}) => {
         id
 	};
 };
+
+//REMOVE TODO
+export const removeTodo = ({ id } = {}) => {
+	return {
+		type: "REMOVE_TODO",
+		id
+	}
+}
