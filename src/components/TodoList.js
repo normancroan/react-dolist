@@ -1,12 +1,17 @@
 import React from "react";
 import Todo from "./Todo";
-import AddTodo from './AddTodo';
+import AddTodo from "./AddTodo";
+import { connect } from "react-redux";
 
 const TodoList = props => (
 	<div>
-        <Todo />
-        <AddTodo />
+		{props.todos.map(todo => <Todo key={todo.id} {...todo} />)}
+		<AddTodo />
 	</div>
 );
 
-export default TodoList;
+const mapStateToProps = state => ({
+	todos: state.todos
+});
+
+export default connect(mapStateToProps)(TodoList);
