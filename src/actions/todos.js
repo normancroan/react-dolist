@@ -11,3 +11,11 @@ export const addTodo = ({ thing = "", isCompleted = false } = {}) => {
 		}
 	};
 };
+
+//TOGGLE TODO
+export const toggleTodo = ({ id } = {}) => {
+	return {
+		type: "TOGGLE_TODO",
+        id
+	};
+};
